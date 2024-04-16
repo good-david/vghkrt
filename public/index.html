@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-charts-component/dist/aframe-charts-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+        <a-asset>
+            <a-asset-item id="data" src='[{"x": 0, "y": 0.5, "z": 0, "size": 1, "color": "#ff0000"},
+                {"x": 1, "y": 1, "z": 0, "size": 1, "color": "#00ff00"},
+                {"x": 2, "y": 2, "z": 0, "size": 1, "color": "#0000ff"}]'>
+                        </a-asset-item>
+        </a-asset>
+        <a-light type="point" intensity="1" position="-2 10 10"></a-light>
+        <a-entity charts="type: bar; dataPoints: #data; axis_length: 12; axis_visible: false"></a-entity>
+
+        <a-entity position="2 10 14" rotation="-30 15 0">
+            <a-camera position="3 -1 -12" rotation="0 -1 0">
+                <a-cursor></a-cursor>
+            </a-camera>
+        </a-entity>
+    </a-scene>
+
+      <!-- <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-cylinder
+        position="1 0.75 -3"
+        radius="0.5"
+        height="1.5"
+        color="#FFC65D"
+      ></a-cylinder>
+      <a-plane
+        position="0 0 -4"
+        rotation="-90 0 0"
+        width="4"
+        height="4"
+        color="#7BC8A4"
+      ></a-plane>
+      <a-sky color="#ECECEC"></a-sky> -->
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-chartbuilder-component@0.3.0/dist/aframe-chartbuilder-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-entity chartbuilder="type: bar; data: 10 15 20 25 30 35 40 45 50 55; labels: Jan Feb Mar Apr May Jun Jul Aug Sep Oct; title: Monthly Sales; color: red" position="0 1.6 -2"></a-entity>
+      <a-entity id="cameraRig">
+        <a-entity camera look-controls></a-entity>
+      </a-entity>
+    </a-scene>
+  </body>
+</html> -->
